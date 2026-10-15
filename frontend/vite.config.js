@@ -8,7 +8,7 @@ export default defineConfig({
     proxy: {
       '/api': {
         //target: 'http://localhost:8080',
-        target: 'https://softvetback.onrender.com/',
+        target: 'https://softvetback.onrender.com',
         changeOrigin: true,
         rewrite: (path) => path.replace(/^\/api/, ''),
       },

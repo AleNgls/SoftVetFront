@@ -1,5 +1,5 @@
 // Service to handle communication with backend and localStorage fallback
-const API_URL = '/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 // Helper to initialize local storage
 const initializeStorage = () => {

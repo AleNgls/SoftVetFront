@@ -3,6 +3,8 @@ import { PawPrint, Users, ClipboardList, Package, ShoppingCart, PlusCircle, Acti
 import { apiService } from '../services/api';
 import './Dashboard.css';
 
+const API_URL = import.meta.env.VITE_API_URL || '/api';
+
 const Dashboard = ({ setActiveTab, triggerRefresh, currentUser, onOpenAuthModal }) => {
   const [stats, setStats] = useState({
     pacientesCount: 0,
@@ -41,7 +43,7 @@ const Dashboard = ({ setActiveTab, triggerRefresh, currentUser, onOpenAuthModal 
     const checkBackend = async () => {
       try {
         // Consultar /api/pacientes para verificar conexión con el backend
-        const response = await fetch('/pacientes');
+        const response = await fetch(`${API_URL}/pacientes`);
         if (response.status === 200 || response.status === 401 || response.status === 403) {
           setBackendStatus('online');
         } else {

@@ -1,0 +1,130 @@
+.pacientes-view, .paciente-details-view {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.paciente-name-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.avatar-small-pet {
+  width: 30px;
+  height: 30px;
+  border-radius: 6px;
+  background-color: var(--secondary-light);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.avatar-large-pet {
+  width: 56px;
+  height: 56px;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--secondary-light);
+  color: var(--secondary-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Details Page layout */
+.paciente-profile-grid {
+  display: grid;
+  grid-template-columns: 1fr 2.2fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .paciente-profile-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.basic-info-card {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.pet-details-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  padding: 1rem 0;
+}
+
+.detail-item-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.95rem;
+}
+
+.alert-allergies-row {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.25rem;
+}
+
+.allergies-title {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.text-red {
+  color: var(--danger-color);
+}
+.text-gray {
+  color: var(--text-tertiary);
+}
+
+.owner-summary-box {
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  border-radius: var(--border-radius-sm);
+  padding: 1rem;
+  font-size: 0.85rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.owner-box-title {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  border-bottom: 1px dashed var(--border-color);
+  padding-bottom: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+.log-visit-btn {
+  width: 100%;
+}
+
+/* Timeline medical notes container */
+.timeline-notes {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.suggestion-box {
+  margin-top: 0.5rem;
+  padding: 0.75rem;
+  background-color: var(--accent-light);
+  color: var(--text-primary);
+  border-left: 3px solid var(--accent-color);
+  border-radius: 4px;
+}

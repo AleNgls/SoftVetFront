@@ -1,0 +1,241 @@
+.dashboard-view {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.dashboard-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--text-primary);
+  margin-bottom: 0.25rem;
+}
+
+.dashboard-subtitle {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+}
+
+.dashboard-top-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+/* Backend status indicator */
+.backend-indicator {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid transparent;
+}
+
+.backend-indicator.checking {
+  background-color: var(--bg-tertiary);
+  color: var(--text-secondary);
+  border-color: var(--border-color);
+}
+
+.backend-indicator.online {
+  background-color: var(--secondary-light);
+  color: var(--secondary-hover);
+  border-color: rgba(16, 185, 129, 0.2);
+}
+
+.backend-indicator.offline {
+  background-color: var(--accent-light);
+  color: var(--accent-color);
+  border-color: rgba(245, 158, 11, 0.2);
+}
+
+.indicator-icon {
+  width: 16px;
+  height: 16px;
+}
+
+/* Background classes for stats card icons */
+.sky-bg {
+  background-color: var(--primary-light);
+}
+.text-sky {
+  color: var(--primary-color);
+}
+
+.emerald-bg {
+  background-color: var(--secondary-light);
+}
+.text-emerald {
+  color: var(--secondary-color);
+}
+
+.amber-bg {
+  background-color: var(--accent-light);
+}
+.text-amber {
+  color: var(--accent-color);
+}
+
+/* Dashboard inner layout */
+.dashboard-sections {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 1.5rem;
+}
+
+@media (max-width: 1024px) {
+  .dashboard-sections {
+    grid-template-columns: 1fr;
+  }
+}
+
+.recent-activity-card, .quick-actions-card {
+  height: 100%;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 1.5rem;
+  text-align: center;
+  color: var(--text-tertiary);
+}
+
+.empty-icon {
+  width: 48px;
+  height: 48px;
+  margin-bottom: 1rem;
+  stroke-width: 1.5;
+}
+
+/* Recent list styling */
+.recent-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.recent-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1rem;
+  border-radius: var(--border-radius-sm);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  transition: transform var(--transition-fast), border-color var(--transition-fast);
+}
+
+.recent-item:hover {
+  transform: translateX(3px);
+  border-color: var(--border-hover);
+}
+
+.recent-item-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary-color);
+  flex-shrink: 0;
+}
+
+.recent-item-details {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-size: 0.875rem;
+}
+
+.recent-item-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.patient-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.consultation-date {
+  font-size: 0.75rem;
+  color: var(--text-tertiary);
+}
+
+.consultation-reason, .consultation-treatment {
+  color: var(--text-secondary);
+}
+
+/* Quick Actions grid */
+.quick-actions-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.quick-action-btn {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.25rem;
+  border-radius: var(--border-radius-md);
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+}
+
+.quick-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-sm);
+  background-color: var(--bg-secondary);
+}
+
+.quick-action-btn.border-emerald:hover { border-color: var(--secondary-color); }
+.quick-action-btn.border-sky:hover { border-color: var(--primary-color); }
+.quick-action-btn.border-amber:hover { border-color: var(--accent-color); }
+
+.action-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  margin-top: 0.1rem;
+}
+
+.action-title {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text-primary);
+  display: block;
+  margin-bottom: 0.15rem;
+}
+
+.action-desc {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+  display: block;
+}

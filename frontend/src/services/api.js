@@ -13,22 +13,13 @@ const initializeStorage = () => {
     localStorage.setItem('consultas', JSON.stringify([]));
   }
   if (!localStorage.getItem('productos')) {
-    localStorage.setItem('productos', JSON.stringify([
-      { id: 1, nombre: 'Vacuna Antirrábica', marca: 'Zoetis', precio: 15000, stock: 25 },
-      { id: 2, nombre: 'Desparasitante Interno (Pipeta)', marca: 'Bayer', precio: 8500, stock: 12 },
-      { id: 3, nombre: 'Alimento Balanceado Adultos 15kg', marca: 'Royal Canin', precio: 45000, stock: 3 },
-      { id: 4, nombre: 'Antibiótico Amoxicilina 250mg', marca: 'Pharmvet', precio: 6200, stock: 0 }
-    ]));
+    localStorage.setItem('productos', JSON.stringify([]));
   }
   if (!localStorage.getItem('ventas')) {
     localStorage.setItem('ventas', JSON.stringify([]));
   }
   if (!localStorage.getItem('users')) {
-    // Default demo users for offline mode
-    localStorage.setItem('users', JSON.stringify([
-      { username: 'admin', email: 'admin@softvet.com', password: 'password123', rol: 'ADMIN' },
-      { username: 'vet_doctor', email: 'doctor@softvet.com', password: 'password123', rol: 'USER' }
-    ]));
+    localStorage.setItem('users', JSON.stringify([]));
   }
 };
 
@@ -105,7 +96,7 @@ export const apiService = {
         const token = resData.data?.token || resData.token;
         if (token) {
           authStorage.setToken(token);
-          
+
           // Estimar rol o guardar info de usuario autenticado
           const userObj = {
             username,

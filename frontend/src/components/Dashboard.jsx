@@ -41,7 +41,7 @@ const Dashboard = ({ setActiveTab, triggerRefresh, currentUser, onOpenAuthModal 
     const checkBackend = async () => {
       try {
         // Consultar /api/pacientes para verificar conexión con el backend
-        const response = await fetch('/api/pacientes');
+        const response = await fetch('/pacientes');
         if (response.status === 200 || response.status === 401 || response.status === 403) {
           setBackendStatus('online');
         } else {
@@ -75,7 +75,7 @@ const Dashboard = ({ setActiveTab, triggerRefresh, currentUser, onOpenAuthModal 
             {currentUser ? `¡Hola, ${currentUser.username}!` : 'Panel de Control'}
           </h1>
           <p className="dashboard-subtitle">
-            {currentUser 
+            {currentUser
               ? `Sesión activa como ${currentUser.rol === 'ADMIN' ? 'Administrador' : 'Veterinario'}. Gestión clínica de SoftVet.`
               : 'Bienvenido a la gestión clínica integral de SoftVet.'
             }
@@ -168,7 +168,7 @@ const Dashboard = ({ setActiveTab, triggerRefresh, currentUser, onOpenAuthModal 
               Ver Todas
             </button>
           </div>
-          
+
           {recentConsultas.length === 0 ? (
             <div className="empty-state">
               <Activity className="empty-icon" />
